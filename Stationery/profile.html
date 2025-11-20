@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Profile - Stationery World</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background:#1f3b57;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/pencil.png" width="34" height="34" class="me-2">
+      Stationery World
+    </a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" id="userDisplay">Profile</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container d-flex justify-content-center" style="margin-top:70px; margin-bottom:70px;">
+  <div class="p-5 shadow-lg rounded" style="max-width:550px; width:100%; background:white; border-radius:12px;">
+    
+    <h2 class="text-center mb-4" style="color:#1f3b57;">Your Profile</h2>
+
+    <div class="mb-3">
+      <h5 style="color:#1f3b57;">Username:</h5>
+      <p id="pName" class="profile-text"></p>
+    </div>
+
+    <div class="mb-3">
+      <h5 style="color:#1f3b57;">Email:</h5>
+      <p id="pEmail" class="profile-text"></p>
+    </div>
+
+    <div class="mb-3">
+      <h5 style="color:#1f3b57;">Mobile:</h5>
+      <p id="pMobile" class="profile-text"></p>
+    </div>
+
+    <button class="btn w-100 mt-3" onclick="logoutUser()" 
+    style="background:#d9534f; color:white; padding:12px; font-size:17px; border-radius:10px;">
+      Logout
+    </button>
+
+  </div>
+</div>
+
+<script>
+  let active = JSON.parse(localStorage.getItem("activeUser"));
+
+  if (!active) {
+    window.location.href = "login.html";
+  }
+
+  document.getElementById("pName").innerText = active.username;
+  document.getElementById("pEmail").innerText = active.email;
+  document.getElementById("pMobile").innerText = active.mobile;
+
+  function logoutUser(){
+    localStorage.removeItem("activeUser");
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>
