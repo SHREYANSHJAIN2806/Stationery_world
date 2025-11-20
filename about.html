@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Stationery World</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/stationery.png">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background:#1f3b57;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/pencil.png" width="34" height="34" class="me-2">
+      Stationery World
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="container my-5">
+  <div class="row align-items-center">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <img src="images/about.jpeg" height="400" width="400" style="border-radius: 30px;">
+    </div>
+
+    <div class="col-md-6">
+      <h2 class="mb-3" style="color:#1f3b57;">About Stationery World</h2>
+      <p class="lead">
+        Stationery World was created with a vision to make high-quality stationery accessible, affordable, and enjoyable for everyone.
+      </p>
+      <p>
+        Whether you’re a student, an artist, or a working professional, our products are designed to enhance your creativity and productivity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background:#f0f6ff;">
+  <div class="container">
+    <h3 class="text-center mb-4" style="color:#1f3b57;">Our Mission</h3>
+
+    <div class="row g-4 mt-3">
+      <div class="col-md-4">
+        <div class="feature-card p-4">
+          <h4>Quality First</h4>
+          <p>We select every item carefully to ensure exceptional quality and durability.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-card p-4">
+          <h4>Affordable for All</h4>
+          <p>Premium stationery shouldn’t be expensive — our pricing stays student-friendly.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-card p-4">
+          <h4>For Students & Creators</h4>
+          <p>We support learning, creativity, and productivity with our wide stationery collection.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-5">
+  <h3 class="text-center mb-4" style="color:#1f3b57;">Meet the Team</h3>
+
+  <div class="row g-4">
+    <div class="col-md-4 text-center">
+      <div class="team-card p-4 shadow-sm rounded">
+        <img src="images/developer.webp" width="120" class="rounded-circle mb-3">
+        <h5>Shreyansh Jain</h5>
+        <p class="text-muted">Developer</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <div class="team-card p-4 shadow-sm rounded">
+        <img src="images/developer.webp" width="120" class="rounded-circle mb-3">
+        <h5>Vansh Tripathi</h5>
+        <p class="text-muted">Developer</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <div class="team-card p-4 shadow-sm rounded">
+        <img src="images/designer.webp" width="120" class="rounded-circle mb-3">
+        <h5>Manan Sharma</h5>
+        <p class="text-muted">Designer</p>
+      </div>
+    </div>
+
+    <center>
+      <div class="col-md-4 text-center">
+        <div class="team-card p-4 shadow-sm rounded">
+          <img src="images/contentmanager.webp" width="120" class="rounded-circle mb-3">
+          <h5>Pragun Kumar</h5>
+          <p class="text-muted">Content Manager</p>
+        </div>
+    </center>
+  </div>
+</section>
+
+<footer class="footer mt-5">
+  <div class="container text-center">
+    © 2025 Stationery World · Built by Team
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const user = JSON.parse(localStorage.getItem("activeUser"));
+  const navUser = document.getElementById("userDisplay");
+
+  if (user) {
+      navUser.innerHTML = `Hi, ${user.username} | <a href="profile.html" style="color:white; text-decoration:underline;">Profile</a> | <a href="#" onclick="logoutUser()" style="color:white; text-decoration:underline;">Logout</a>`;
+  } else {
+      navUser.innerHTML = `<a href="login.html" class="nav-link" style="color:white;">Login</a>`;
+  }
+
+  function logoutUser(){
+      localStorage.removeItem("activeUser");
+      window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>
